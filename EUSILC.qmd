@@ -20,7 +20,8 @@ Data on social exclusion and housing conditions are primarily gathered at the ho
 Data is available at eurostat database under the folder "Living conditions and welfare"(https://ec.europa.eu/eurostat/web/main/data/database?node_code=livcon).
 
 The folder contains four sub folders containing different datasets.
-``` 
+
+```         
 1.  Consumption expenditure of private households (hbs)
 
     1.1 Mean consumption expenditure of private households (hbs_exp) 
@@ -82,7 +83,11 @@ The folder contains four sub folders containing different datasets.
 4. Gender based violence against women (gbv)
 ```
 
-To retrieve data from eurostat the following codes can be used 
+To retrieve data from eurostat the following codes can be used
+
 ```{r}
-1 + 1
+library(eurostat)
+p_poverty_social_exclusion <- search_eurostat("Persons at risk of poverty or social exclusion")
+knitr::kable(head(p_poverty_social_exclusion))
+
 ```

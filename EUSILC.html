@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availablity" class="level2">
 <h2 class="anchored" data-anchor-id="data-availablity">Data availablity</h2>
 <p>Data is available at eurostat database under the folder “Living conditions and welfare”(https://ec.europa.eu/eurostat/web/main/data/database?node_code=livcon).</p>
-<p>The folder contains four sub folders.</p>
+<p>The folder contains four sub folders containing different datasets.</p>
 <pre><code>1.  Consumption expenditure of private households (hbs)
 
     1.1 Mean consumption expenditure of private households (hbs_exp) 
@@ -123,12 +123,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
          2.1.1 Main indicator - Persons at risk of poverty or social exclusion (ilc_peps)
          2.1.2 Intersections between sub-populations of indicators included in the EU 2030 target on poverty and social exclusion (ilc_pees)
-
-
+         
     2.2 Persons at risk of poverty or social exclusion and intersections between sub-populations (EU 2020 strategy) (ilc_p)
-
-    2.3 Inequality (ilc_ie)
     
+    2.3 Inequality (ilc_ie)
         2.3.1 Income inequality (ilc_iei)
         
     2.4 Income distribution and monetary poverty (ilc_ip)
@@ -172,10 +170,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 3. Time use survey (tus)
 4. Gender based violence against women (gbv)</code></pre>
+<p>To retrieve data from eurostat the following codes can be used</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eurostat)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p_poverty_social_exclusion <span class="ot">&lt;-</span> <span class="fu">search_eurostat</span>(<span class="st">"Persons at risk of poverty or social exclusion"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(p_poverty_social_exclusion))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 5%">
+<col style="width: 3%">
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">title</th>
+<th style="text-align: left;">code</th>
+<th style="text-align: left;">type</th>
+<th style="text-align: left;">last.update.of.data</th>
+<th style="text-align: left;">last.table.structure.change</th>
+<th style="text-align: left;">data.start</th>
+<th style="text-align: left;">data.end</th>
+<th style="text-align: right;">values</th>
+<th style="text-align: right;">hierarchy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by NUTS regions</td>
+<td style="text-align: left;">ilc_peps11n</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">27.10.2023</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">1991</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by degree of urbanisation - EU 2020 strategy</td>
+<td style="text-align: left;">ilc_peps13</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2003</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">4080</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by degree of urbanisation</td>
+<td style="text-align: left;">ilc_peps13n</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">06.06.2023</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">1731</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by level of disability (activity limitation), sex and age</td>
+<td style="text-align: left;">hlth_dpe010</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">45090</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by age and sex</td>
+<td style="text-align: left;">ilc_peps01n</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">65688</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Persons at risk of poverty or social exclusion by most frequent activity status (population aged 18 and over)</td>
+<td style="text-align: left;">ilc_peps02n</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">06.06.2023</td>
+<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">113400</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </section>
