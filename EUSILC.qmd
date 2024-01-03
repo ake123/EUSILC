@@ -149,5 +149,5 @@ The [EU-SILC Guidelines ](https://ec.europa.eu/eurostat/documents/203647/1699300
 ```{r}
 #| results = "asis"
 library(retroharmonize)
-attributes(dat)
+head(attributes(dat))
 ```
