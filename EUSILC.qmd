@@ -92,3 +92,24 @@ EU_SILC <- search_eurostat("EU-SILC survey")
 knitr::kable(head(EU_SILC))
 
 ```
+
+```{r}
+library(ggplot2)
+
+# Function to create histograms for all numeric columns
+plot_histograms <- function(EU_SILC) {
+  numeric_columns <- sapply(EU_SILC, is.numeric)
+  for (col_name in names(EU_SILC)[numeric_columns]) {
+    p <- ggplot(EU_SILC, aes_string(x = col_name)) +
+      geom_histogram(bins = 30, fill = "blue", color = "black") +
+      theme_minimal() +
+      labs(title = paste("Histogram of", col_name))
+    print(p)
+  }
+}
+
+# Call the function
+plot_histograms(EU_SILC)
+```
+
+
