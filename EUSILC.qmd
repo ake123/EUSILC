@@ -93,6 +93,17 @@ knitr::kable(head(EU_SILC))
 
 ```
 
+
+```{r}
+# Load necessary library
+library(dplyr)
+
+# Calculate the amount of missing data in each column
+missing_data <- sapply(EU_SILC, function(x) sum(is.na(x)))
+missing_data
+```
+
+
 ```{r}
 library(ggplot2)
 
@@ -112,4 +123,11 @@ plot_histograms <- function(EU_SILC) {
 plot_histograms(EU_SILC)
 ```
 
+```{r}
+# Get the id from the table
+id <- EU_SILC$code[1]
 
+# Check the id
+dat <- get_eurostat(id, time_format = "num", stringsAsFactors = TRUE)
+knitr::kable(head(dat))
+```
