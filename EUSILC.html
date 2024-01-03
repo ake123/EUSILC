@@ -179,35 +179,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ropengov/eurostat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Downloading GitHub repo ropengov/eurostat@HEAD</code></pre>
+<pre><code>Skipping install of 'eurostat' from a github remote, the SHA1 (246da727) has not changed since last install.
+  Use `force = TRUE` to force installation</code></pre>
 </div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-── R CMD build ─────────────────────────────────────────────────────────────────
-* checking for file ‘/private/var/folders/2j/0z_4hj9x2536zbjhtj96swgw0000gn/T/Rtmp1KtLnr/remotes2abc3a513d84/rOpenGov-eurostat-246da72/DESCRIPTION’ ... OK
-* preparing ‘eurostat’:
-* checking DESCRIPTION meta-information ... OK
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘eurostat_4.0.0.tar.gz’</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into '/Users/akasia/Library/R/x86_64/4.3/library'
-(as 'lib' is unspecified)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eurostat)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>p_poverty_social_exclusion <span class="ot">&lt;-</span> <span class="fu">search_eurostat</span>(<span class="st">"Persons at risk of poverty or social exclusion"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(p_poverty_social_exclusion))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(eurostat)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>EU_SILC <span class="ot">&lt;-</span> <span class="fu">search_eurostat</span>(<span class="st">"EU-SILC survey"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(EU_SILC))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
-<col style="width: 51%">
+<col style="width: 53%">
 <col style="width: 5%">
 <col style="width: 3%">
-<col style="width: 9%">
-<col style="width: 13%">
-<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 12%">
 <col style="width: 4%">
+<col style="width: 3%">
 <col style="width: 3%">
 <col style="width: 4%">
 </colgroup>
@@ -226,70 +213,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by NUTS regions</td>
-<td style="text-align: left;">ilc_peps11n</td>
-<td style="text-align: left;">dataset</td>
-<td style="text-align: left;">15.12.2023</td>
-<td style="text-align: left;">27.10.2023</td>
-<td style="text-align: left;">2014</td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: right;">1991</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by degree of urbanisation - EU 2020 strategy</td>
-<td style="text-align: left;">ilc_peps13</td>
+<td style="text-align: left;">Distribution of population aged 18 and over by health status, age group, sex and degree of urbanisation - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvhl01</td>
 <td style="text-align: left;">dataset</td>
 <td style="text-align: left;">15.12.2023</td>
 <td style="text-align: left;">15.12.2023</td>
 <td style="text-align: left;">2003</td>
 <td style="text-align: left;">2022</td>
-<td style="text-align: right;">4080</td>
-<td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by degree of urbanisation</td>
-<td style="text-align: left;">ilc_peps13n</td>
-<td style="text-align: left;">dataset</td>
-<td style="text-align: left;">15.12.2023</td>
-<td style="text-align: left;">06.06.2023</td>
-<td style="text-align: left;">2014</td>
-<td style="text-align: left;">2022</td>
-<td style="text-align: right;">1731</td>
+<td style="text-align: right;">122400</td>
 <td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by level of disability (activity limitation), sex and age</td>
-<td style="text-align: left;">hlth_dpe010</td>
+<td style="text-align: left;">Distribution of population by degree of urbanisation, dwelling type and income group - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvho01</td>
 <td style="text-align: left;">dataset</td>
 <td style="text-align: left;">15.12.2023</td>
 <td style="text-align: left;">15.12.2023</td>
-<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2003</td>
 <td style="text-align: left;">2022</td>
-<td style="text-align: right;">45090</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: right;">65376</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by age and sex</td>
-<td style="text-align: left;">ilc_peps01n</td>
+<td style="text-align: left;">Overcrowding rate by degree of urbanisation - total population - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvho05d</td>
 <td style="text-align: left;">dataset</td>
 <td style="text-align: left;">15.12.2023</td>
 <td style="text-align: left;">15.12.2023</td>
-<td style="text-align: left;">2014</td>
+<td style="text-align: left;">2003</td>
 <td style="text-align: left;">2022</td>
-<td style="text-align: right;">65688</td>
-<td style="text-align: right;">6</td>
+<td style="text-align: right;">2041</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Persons at risk of poverty or social exclusion by most frequent activity status (population aged 18 and over)</td>
-<td style="text-align: left;">ilc_peps02n</td>
+<td style="text-align: left;">Share of people living in under-occupied dwellings by degree of urbanisation - total population - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvho50d</td>
 <td style="text-align: left;">dataset</td>
 <td style="text-align: left;">15.12.2023</td>
-<td style="text-align: left;">06.06.2023</td>
-<td style="text-align: left;">2014</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2003</td>
 <td style="text-align: left;">2022</td>
-<td style="text-align: right;">113400</td>
-<td style="text-align: right;">6</td>
+<td style="text-align: right;">2038</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Housing cost overburden rate by degree of urbanisation - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvho07d</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2003</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">1999</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Median of the housing cost burden distribution by degree of urbanisation - EU-SILC survey</td>
+<td style="text-align: left;">ilc_lvho08b</td>
+<td style="text-align: left;">dataset</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">15.12.2023</td>
+<td style="text-align: left;">2003</td>
+<td style="text-align: left;">2022</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">4</td>
 </tr>
 </tbody>
 </table>

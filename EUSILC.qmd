@@ -90,7 +90,7 @@ To retrieve data from eurostat the following codes can be used
 library(devtools)
 devtools::install_github("ropengov/eurostat")
 library(eurostat)
-p_poverty_social_exclusion <- search_eurostat("Persons at risk of poverty or social exclusion")
-knitr::kable(head(p_poverty_social_exclusion))
+EU_SILC <- search_eurostat("EU-SILC survey")
+knitr::kable(head(EU_SILC))
 
 ```
