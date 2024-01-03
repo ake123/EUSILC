@@ -17,7 +17,7 @@ Data on social exclusion and housing conditions are primarily gathered at the ho
 
 ## Data availablity
 
-Data is available at eurostat database under the folder "Living conditions and welfare"(https://ec.europa.eu/eurostat/web/main/data/database?node_code=livcon).
+Data is available at eurostat database under the folder ["Living conditions and welfare"](https://ec.europa.eu/eurostat/web/main/data/database?node_code=livcon).
 
 The folder contains four sub folders containing different datasets.
 
@@ -136,3 +136,11 @@ id <- EU_SILC$code[1]
 dat <- get_eurostat(id, time_format = "num", stringsAsFactors = TRUE)
 knitr::kable(head(dat))
 ```
+
+
+
+The [data availability table](https://ec.europa.eu/eurostat/documents/203647/771732/Datasets-availability-table.pdf) shows the latest and planned releases of EU-SILC scientific use files.
+
+The [EU-SILC Guidelines ](https://ec.europa.eu/eurostat/documents/203647/16993001/Methodological+guidelines+2022+operation+v7.pdf/ec6bc779-6462-34aa-a8bd-256f8af34d31?t=1703153300474) can be refered for further information.
+[List of EU-SILC microdata releases with digital object identifiers](https://ec.europa.eu/eurostat/documents/203647/203704/EU-SILC+microdata+with+DOIs.pdf/04b57b6d-803b-fa8d-bf6b-fe21fe6d1cb2?t=1703162264564)
+
