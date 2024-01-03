@@ -16,13 +16,16 @@ jobs:
         
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
+        
+      - name: Install devtools package
+        run: Rscript -e 'install.packages("devtools")'
 
       - name:  Install R packages
         run: |
           Rscript -e 'install.packages("rmarkdown")'
-          Rscript -e 'install.packages("devtools")'
-          Rscript -e 'install.packages("eurostat")'
-    
+
+      - name: Install devtools package
+        run: Rscript -e 'devtools::install_github("ropengov/eurostat")'
           
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
