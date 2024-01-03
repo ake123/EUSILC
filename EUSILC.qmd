@@ -86,6 +86,9 @@ The folder contains four sub folders containing different datasets.
 To retrieve data from eurostat the following codes can be used
 
 ```{r}
+# Install from GitHub
+library(devtools)
+devtools::install_github("ropengov/eurostat")
 library(eurostat)
 p_poverty_social_exclusion <- search_eurostat("Persons at risk of poverty or social exclusion")
 knitr::kable(head(p_poverty_social_exclusion))
