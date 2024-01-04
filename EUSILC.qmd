@@ -83,7 +83,7 @@ The folder contains four sub folders containing different datasets.
 4. Gender based violence against women (gbv)
 ```
 
-To retrieve data from eurostat the following codes can be used
+To retrieve data from eurostat the following code can be used
 
 ```{r}
 #| label = "load-pkg-data"
@@ -96,12 +96,8 @@ knitr::kable(head(EU_SILC))
 
 
 ```{r}
-#| label = "setup",
-#| echo = FALSE,
-#| results = "asis"
-library(dplyr)
-
 # Calculate the amount of missing data in each column
+library(dplyr)
 missing_data <- sapply(EU_SILC, function(x) sum(is.na(x)))
 missing_data
 ```
@@ -142,6 +138,7 @@ knitr::kable(head(dat))
 The [data availability table](https://ec.europa.eu/eurostat/documents/203647/771732/Datasets-availability-table.pdf) shows the latest and planned releases of EU-SILC scientific use files.
 
 The [EU-SILC Guidelines ](https://ec.europa.eu/eurostat/documents/203647/16993001/Methodological+guidelines+2022+operation+v7.pdf/ec6bc779-6462-34aa-a8bd-256f8af34d31?t=1703153300474) can be refered for further information.
+
 [List of EU-SILC microdata releases with digital object identifiers](https://ec.europa.eu/eurostat/documents/203647/203704/EU-SILC+microdata+with+DOIs.pdf/04b57b6d-803b-fa8d-bf6b-fe21fe6d1cb2?t=1703162264564)
 
 ## retroharmonize implementation
@@ -149,5 +146,5 @@ The [EU-SILC Guidelines ](https://ec.europa.eu/eurostat/documents/203647/1699300
 ```{r}
 #| results = "asis"
 library(retroharmonize)
-head(attributes(dat))
+(attributes(dat))$names
 ```
