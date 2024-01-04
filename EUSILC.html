@@ -324,6 +324,7 @@ last.table.structure.change                  data.start
 ℹ Please use tidy evaluation idioms with `aes()`.
 ℹ See also `vignette("ggplot2-in-packages")` for more information.</code></pre>
 <p><img src="EUSILC_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"><img src="EUSILC_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the id from the table</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> EU_SILC<span class="sc">$</span>code[<span class="dv">1</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -332,6 +333,15 @@ last.table.structure.change                  data.start
 <p>[1mindexed[0m [32m0B[0m in [36m 0s[0m, [32m0B/s[0m [1mindexed[0m [32m1.00TB[0m in [36m 0s[0m, [32m106.37TB/s[0m</p>
 <pre><code>Table ilc_lvhl01 cached at /var/folders/2j/0z_4hj9x2536zbjhtj96swgw0000gn/T//RtmpnwRE5P/eurostat/a49fd31c836c6a6395a2db6d1fd01fc8.rds</code></pre>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the id from the table</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> EU_SILC<span class="sc">$</span>code[<span class="dv">1</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the id</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">get_eurostat</span>(id, <span class="at">time_format =</span> <span class="st">"num"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>Table ilc_lvhl01 cached at /tmp/RtmpIp4O9O/eurostat/a49fd31c836c6a6395a2db6d1fd01fc8.rds</code></pre>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(dat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> origin
 <div class="cell-output-display">
 <table class="table">
 <thead>
