@@ -153,4 +153,4 @@ library(retroharmonize)
 
 ## References
 
-[Online Publications](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_statistics_on_income_and_living_conditions_(EU-SILC)_methodology)
+[Online Publications](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Category:Online_publications)
