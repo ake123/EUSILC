@@ -1,5 +1,5 @@
 ---
-title: "EUSILC"
+title: "EU-SILC"
 execute:
   warning: false
 ---
