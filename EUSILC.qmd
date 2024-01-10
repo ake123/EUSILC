@@ -150,3 +150,7 @@ The [EU-SILC Guidelines ](https://ec.europa.eu/eurostat/documents/203647/1699300
 library(retroharmonize)
 (attributes(dat))$names
 ```
+
+## References
+
+[Online Publications](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Online_publications)
