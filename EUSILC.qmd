@@ -6,7 +6,7 @@ execute:
 
 ## Definition
 
-EU-SILC is an EU statistics on income and living conditions. According to eurostat, EU-SILC is to gather up-to-date and comparable data on income, poverty, social exclusion, and living conditions, both in a cross-sectional and longitudinal manner.
+EU statistics on income and living conditions (EU-SILC) methodology is a Eurostat online publication describing the indicators and datasets of European Union's (EU) statistics on income and living conditions published in Eurostat's dissemination database. It provides information on the calculation of the published datasets, along with information on their quality and methodological limitations.
 
 ## Data types
 
