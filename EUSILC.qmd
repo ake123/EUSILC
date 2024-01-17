@@ -88,32 +88,50 @@ The folder contains four sub folders containing different datasets.
 To retrieve data from eurostat the following code can be used
 
 ```{r}
-#| label = "load-pkg-data"
+# Load the eurostat library if not already installed
+if (!requireNamespace("eurostat", quietly = TRUE)) {
+  install.packages("eurostat")
+}
 
+# Load the eurostat library
 library(eurostat)
+
+# Search for the EU-SILC survey data
 EU_SILC <- search_eurostat("EU-SILC survey")
+
+# Display the first few rows of the search results in a nicely formatted table
 knitr::kable(head(EU_SILC))
 
+
 ```
 
 
 ```{r}
-# Calculate the amount of missing data in each column
-library(dplyr)
-missing_data <- sapply(EU_SILC, function(x) sum(is.na(x)))
-missing_data
+# Load the tidyverse and dplyr libraries if not already installed
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+
+# Load the tidyverse and dplyr libraries
+library(tidyverse)
+
+# Calculate the number of missing values in each column
+missing_data <- EU_SILC %>%
+  summarise(across(everything(), ~ sum(is.na(.))))
+
 ```
 
 
 ```{r}
-#| results = "asis"
-library(ggplot2)
-
 # Function to create histograms for all numeric columns
 plot_histograms <- function(EU_SILC) {
-  numeric_columns <- sapply(EU_SILC, is.numeric)
-  for (col_name in names(EU_SILC)[numeric_columns]) {
-    p <- ggplot(EU_SILC, aes_string(x = col_name)) +
+  numeric_columns <- EU_SILC %>%
+    select_if(is.numeric) %>%
+    names()
+  
+  for (col_name in numeric_columns) {
+    p <- EU_SILC %>%
+      ggplot(aes(x = !!sym(col_name))) +
       geom_histogram(bins = 30, fill = "blue", color = "black") +
       theme_minimal() +
       labs(title = paste("Histogram of", col_name))
@@ -126,12 +144,16 @@ plot_histograms(EU_SILC)
 ```
 
 ```{r}
-#| results = "asis"
-# Get the id from the table
+# Define the id
 id <- EU_SILC$code[1]
 
 # Check the id
 dat <- get_eurostat(id, time_format = "num", stringsAsFactors = TRUE)
+
+# Convert dat to a tibble
+dat <- as_tibble(dat)
+
+# Display the first few rows of the tibble using knitr::kable
 knitr::kable(head(dat))
 ```
 
